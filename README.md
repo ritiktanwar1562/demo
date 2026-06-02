@@ -1,12 +1,26 @@
-# Task 4
+# Laundry Service Hero Section
+
+## Project Overview
+This project is a Laundry Service Hero Section created using HTML and CSS.
 
 ## Features
-- HTML
-- CSS
-- Box Model
-- Responsive Design
+- Navigation Bar
+- Home, Services, About Us, Contact Us Links
+- Hero Section
+- Laundry Service Image
+- Book a Service Today Button
+- Responsive Layout
 
-## Files
-- index.html
-- style.css
-- image.jpg
+## Technologies Used
+- HTML5
+- CSS3
+
+## Folder Structure
+
+Laundry-Hero-Section
+│
+├── index.html
+├── style.css
+└── README.md
+## Author
+ritik tanwar
