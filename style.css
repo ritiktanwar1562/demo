@@ -1,42 +1,32 @@
-body {
-    background-color: lightblue;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.head {
-    color: darkblue;
+body{
+    width:100vw;
+    height:100vh;
 }
 
-h1 {
-    background-color: yellow;
+.container{
+    margin:10vh 25vw;
+    text-align:center;
 }
 
-h2 {
-    background-color: orange;
+.image-box img{
+    width:100%;
+    max-width:300px;
+    border-radius:10px;
 }
 
-h3 {
-    background-color: pink;
-}
-
-h2.head {
-    color: red;
-}
-
-p {
-    color: white;
-}
-
-#para {
-    color: green;
-    font-size: 24px;
-}
-
-#para::first-line {
-    color: black;
-}
-
-span {
-    color: red;
-    font-weight: bold;
-    text-decoration: underline;
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    color:white;
+    cursor:pointer;
+    background:linear-gradient(to right,purple,deeppink);
 }

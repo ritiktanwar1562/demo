@@ -1,9 +1,12 @@
-# CSS Selectors Assignment
+# Task 4
 
-Created using HTML and CSS.
+## Features
+- HTML
+- CSS
+- Box Model
+- Responsive Design
 
-Files:
+## Files
 - index.html
 - style.css
-
-Author: Your Name
+- image.jpg
