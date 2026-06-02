@@ -2,12 +2,9 @@
 
 A responsive login page built using HTML and CSS Flexbox.
 
-## Technologies
-- HTML
-- CSS
-
-## Features
+Features:
 - Split layout
-- Login form
-- Flexbox centering
+- Image on left
+- Login form on right
 - Responsive design
+- Flexbox centering
