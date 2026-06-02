@@ -1,26 +1,13 @@
-# Laundry Service Hero Section
+# Laundry Mart Login Page
 
-## Project Overview
-This project is a Laundry Service Hero Section created using HTML and CSS.
+A responsive login page built using HTML and CSS Flexbox.
+
+## Technologies
+- HTML
+- CSS
 
 ## Features
-- Navigation Bar
-- Home, Services, About Us, Contact Us Links
-- Hero Section
-- Laundry Service Image
-- Book a Service Today Button
-- Responsive Layout
-
-## Technologies Used
-- HTML5
-- CSS3
-
-## Folder Structure
-
-Laundry-Hero-Section
-│
-├── index.html
-├── style.css
-└── README.md
-## Author
-ritik tanwar
+- Split layout
+- Login form
+- Flexbox centering
+- Responsive design
