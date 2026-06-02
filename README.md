@@ -1,10 +1,9 @@
-# Laundry Wallah / Laundry Mart
+# CSS Selectors Assignment
 
-## Description
-This is a simple laundry service webpage created using HTML.
+Created using HTML and CSS.
 
-## How to Run
-Open the index.html file in any web browser.
+Files:
+- index.html
+- style.css
 
-## Technologies Used
-- HTML
+Author: Your Name
