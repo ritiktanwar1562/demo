@@ -1,26 +1,30 @@
-# Laundry Service Hero Section
+Laundry Service
 
-## Project Overview
-This project is a Laundry Service Hero Section created using HTML and CSS.
+A responsive Laundry Service landing page built using HTML and CSS.
 
-## Features
-- Navigation Bar
-- Home, Services, About Us, Contact Us Links
-- Hero Section
-- Laundry Service Image
-- Book a Service Today Button
-- Responsive Layout
+Features
 
-## Technologies Used
+- Responsive Navigation Bar
+- Hero Section with Laundry Service Information
+- Animated Hero Image
+- Mobile Responsive Design
+- Flexbox Layout
+
+Technologies Used
+
 - HTML5
 - CSS3
 
-## Folder Structure
+How to Run
 
-Laundry-Hero-Section
-│
-├── index.html
-├── style.css
-└── README.md
-## Author
-ritik tanwar
+1. Download or clone the project.
+2. Open "index.html" in any web browser.
+
+Responsive Design
+
+- Media Queries are used for mobile responsiveness.
+- Desktop-first approach is followed.
+
+Author
+
+ritik Tanwar

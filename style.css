@@ -1,3 +1,8 @@
+:root{
+    --primary-color:#0077ff;
+    --mobile:768px;
+}
+
 *{
     margin:0;
     padding:0;
@@ -6,15 +11,12 @@
 }
 
 nav{
-    background:#0077ff;
+    background:var(--primary-color);
     padding:20px;
-}
 
-.logo,
-.menu,
-.user{
-    display:inline-block;
-    vertical-align:middle;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .logo{
@@ -48,31 +50,40 @@ nav{
 }
 
 .hero{
-    height:90vh;
+    min-height:90vh;
     padding:50px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
 }
 
-.left,
+.left{
+    width:50%;
+}
+
 .right{
-    display:inline-block;
-    width:49%;
-    vertical-align:middle;
+    width:50%;
+    text-align:center;
 }
 
 .left h1{
     font-size:50px;
-    color:#0077ff;
+    color:var(--primary-color);
     margin-bottom:20px;
+    transition:font-size 0.3s ease;
 }
 
 .left p{
     font-size:18px;
     line-height:28px;
     margin-bottom:25px;
+    transition:font-size 0.3s ease;
 }
 
 .left button{
-    background:#0077ff;
+    background:var(--primary-color);
     color:white;
     border:none;
     padding:15px 25px;
@@ -80,113 +91,66 @@ nav{
     cursor:pointer;
 }
 
-.right{
-    text-align:center;
-}
-
 .right img{
     width:90%;
     border-radius:10px;
 }
-/* Tablet View */
-@media screen and (max-width: 768px) {
 
-    nav {
-        padding: 15px 30px;
+@media (max-width:768px){
+
+    nav{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
     }
 
     .logo,
-    .user {
-        font-size: 20px;
+    .menu,
+    .user{
+        width:100%;
+        text-align:center;
     }
 
-    .menu li a {
-        font-size: 14px;
-    }
-
-    .hero {
-        padding: 40px;
-    }
-
-    .left h1 {
-        font-size: 35px;
-    }
-
-    .left p {
-        font-size: 16px;
-    }
-
-    .right img {
-        width: 300px;
-    }
-}
-
-/* Mobile View */
-@media screen and (max-width: 480px) {
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .menu {
-        display: none;
-    }
-
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .left h1 {
-        font-size: 28px;
-    }
-
-    .left p {
-        font-size: 14px;
-    }
-
-    .right img {
-        width: 250px;
-        margin-top: 20px;
-    }
-}
-/* yahan media query khatam ho gayi */
-
-/* NAYA CODE YAHA SE START */
-.hero {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   gap: 30px;
-}
-
-.left {
-   width: 50%;
-}
-
-.right {
-   width: 50%;
-}
-
-.right img {
-   width: 100%;
-   max-width: 450px;
-}
-@media screen and (max-width: 480px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
+    .hero{
+        flex-direction:column;
+        text-align:center;
     }
 
     .left,
-    .right {
-        width: 100%;
+    .right{
+        width:100%;
     }
 
-    .right img {
-        max-width: 250px;
+    .left h1{
+        font-size:35px;
+    }
+
+    .left p{
+        font-size:16px;
+    }
+}
+.hero-img{
+    animation: orbit 4s ease-in-out infinite;
+}
+
+@keyframes orbit{
+    0%{
+        transform: translate(0px,0px) scale(1);
+    }
+
+    25%{
+        transform: translate(20px,-10px) scaleX(1.1);
+    }
+
+    50%{
+        transform: translate(0px,-20px) scale(0.9);
+    }
+
+    75%{
+        transform: translate(-20px,-10px) scaleX(1.1);
+    }
+
+    100%{
+        transform: translate(0px,0px) scale(1);
     }
 }
