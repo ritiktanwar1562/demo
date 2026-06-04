@@ -133,24 +133,45 @@ nav{
     animation: orbit 4s ease-in-out infinite;
 }
 
-@keyframes orbit{
+/* Orbit animation with squeeze effect */
+
+/* Hero image animation */
+.hero-img{
+    animation: orbit 6s linear infinite;
+}
+
+/* Orbit animation with squeeze effect */
+
+/* Hero image animation */
+.hero-img{
+    animation: orbit 6s linear infinite;
+}
+
+/* Circular orbit movement */
+@keyframes orbit {
+
+    /* Starting position */
     0%{
-        transform: translate(0px,0px) scale(1);
+        transform: rotate(0deg) translateX(20px) scale(1,1);
     }
 
+    /* Right side - squeeze horizontally */
     25%{
-        transform: translate(20px,-10px) scaleX(1.1);
+        transform: rotate(90deg) translateX(20px) scale(1.15,0.85);
     }
 
+    /* Bottom */
     50%{
-        transform: translate(0px,-20px) scale(0.9);
+        transform: rotate(180deg) translateX(20px) scale(1,1);
     }
 
+    /* Left side - squeeze vertically */
     75%{
-        transform: translate(-20px,-10px) scaleX(1.1);
+        transform: rotate(270deg) translateX(20px) scale(0.85,1.15);
     }
 
+    /* Back to start */
     100%{
-        transform: translate(0px,0px) scale(1);
+        transform: rotate(360deg) translateX(20px) scale(1,1);
     }
 }

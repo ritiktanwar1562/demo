@@ -1,30 +1,49 @@
-Laundry Service
+# Laundry Service Landing Page
 
-A responsive Laundry Service landing page built using HTML and CSS.
+## Project Overview
 
-Features
+This project is a responsive laundry service landing page created using HTML and CSS.
 
-- Responsive Navigation Bar
-- Hero Section with Laundry Service Information
-- Animated Hero Image
-- Mobile Responsive Design
-- Flexbox Layout
+The page contains:
 
-Technologies Used
+- Navigation bar
+- Hero section
+- Call-to-action button
+- Responsive layout
+- Orbit animation on the image
 
-- HTML5
-- CSS3
+---
 
-How to Run
+## How the Animation Works
 
-1. Download or clone the project.
-2. Open "index.html" in any web browser.
+I created the orbit animation using CSS @keyframes and transform.
 
-Responsive Design
+At 0% the image starts at its original position.
 
-- Media Queries are used for mobile responsiveness.
-- Desktop-first approach is followed.
+At 25% the image rotates to the right side using:
 
-Author
+rotate(90deg) translateX(20px)
 
-ritik Tanwar
+and is slightly squeezed horizontally using:
+
+scale(1.15, 0.85)
+
+At 50% the image reaches the bottom position.
+
+At 75% the image moves to the left side and is squeezed vertically using:
+
+scale(0.85, 1.15)
+
+At 100% the image completes a full circle using:
+
+rotate(360deg)
+
+This creates a smooth circular orbit effect instead of back-and-forth movement.
+
+---
+
+## Responsive Design
+
+Media queries are used to make the layout work on smaller screens.
+
+The hero section changes from a row layout to a column layout for mobile devices.
