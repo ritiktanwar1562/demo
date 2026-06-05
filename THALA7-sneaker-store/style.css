@@ -74,3 +74,23 @@ footer{
     text-align:center;
     padding:15px;
 }
+nav a:hover{
+    color: orange;
+ }
+ 
+ button:hover{
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+ }
+ 
+ .gallery{
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+ }
+ 
+ .gallery img{
+    width: 150px;
+    border-radius: 8px;
+ }

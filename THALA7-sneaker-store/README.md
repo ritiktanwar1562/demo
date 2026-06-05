@@ -16,6 +16,9 @@ This is a simple sneaker store website created using HTML and CSS. I made this p
 - style.css – website styling
 - shoe.png – sneaker image used in the hero section
 - README.md – project documentation
+- product.html- product informatiom
+- cart.html-  procduct order
+- payment.html- product payment
 
 ## What I Learned
 
