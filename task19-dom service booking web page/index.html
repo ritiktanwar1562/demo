@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Booking App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <h2>Logo</h2>
+
+    <ul>
+        <li>Home</li>
+        <li>Services</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+    </ul>
+
+    <div class="user">
+        <span>Ritik</span>
+        <button class="logout">Logout</button>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="left">
+
+        <h2>Added Items</h2>
+
+        <p id="empty">No Items Added</p>
+
+        <ul id="cartList"></ul>
+
+        <h3>Total Amount: ₹<span id="total">0</span></h3>
+
+        <h2>Book Now</h2>
+
+        <input type="text" id="name" placeholder="Full Name">
+
+        <input type="email" id="email" placeholder="Email">
+
+        <input type="password" id="password" placeholder="Password">
+
+        <button id="bookBtn">Book Now</button>
+
+    </div>
+
+    <div class="right">
+
+        <h2>Browse Our Services</h2>
+
+        <p>Select services and add them to cart.</p>
+
+        <div id="servicesContainer"></div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

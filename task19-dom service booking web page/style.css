@@ -1,0 +1,101 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:white;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+.user{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.logout{
+    background:red;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    cursor:pointer;
+}
+
+.container{
+    display:flex;
+    gap:20px;
+    padding:20px;
+}
+
+.left,
+.right{
+    flex:1;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+.left input{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+}
+
+#bookBtn{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    border:none;
+    background:green;
+    color:white;
+    cursor:pointer;
+}
+
+.card{
+    border:1px solid #ddd;
+    padding:15px;
+    margin-top:15px;
+    border-radius:10px;
+}
+
+.card button{
+    margin-top:10px;
+    margin-right:5px;
+    padding:8px 12px;
+    border:none;
+    cursor:pointer;
+}
+
+.add{
+    background:green;
+    color:white;
+}
+
+.skip{
+    background:gray;
+    color:white;
+}
+
+#cartList{
+    margin:15px 0;
+}
+
+#cartList li{
+    margin-bottom:8px;
+}
