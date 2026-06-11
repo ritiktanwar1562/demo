@@ -1,0 +1,129 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px;
+    background:#2196f3;
+    color:white;
+}
+nav img{
+    height:80px;
+    width:auto;
+}
+
+ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+a{
+    color:white;
+    text-decoration:none;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:50px;
+}
+
+.hero img{
+    width:250px;
+}
+
+.hero button{
+    margin-top:15px;
+    padding:10px 20px;
+}
+
+.overview{
+    display:flex;
+    justify-content:space-around;
+    background:#03a9f4;
+    color:white;
+    padding:30px;
+}
+
+.booking{
+    display:flex;
+    gap:30px;
+    padding:40px;
+}
+
+.services,
+.cart{
+    flex:1;
+    border:1px solid gray;
+    padding:20px;
+}
+
+.services div{
+    margin:15px 0;
+}
+
+button{
+    padding:8px 15px;
+    cursor:pointer;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+.quality{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    padding:40px;
+}
+
+.card{
+    border:1px solid gray;
+    padding:20px;
+    text-align:center;
+}
+
+.newsletter{
+    text-align:center;
+    padding:40px;
+    background:#03a9f4;
+    color:white;
+}
+
+.newsletter input{
+    width:250px;
+}
+
+footer{
+    display:flex;
+    justify-content:space-around;
+    padding:40px;
+    background:#222;
+    color:white;
+}
+
+#message{
+    color:green;
+    margin-top:10px;
+}
+.card img {
+    width: 80px;
+    height: 80px;
+    object-fit : contain;
+    display: block;
+    margin: 0 auto 10px;
+}
+footer img{
+    width:50px;
+    height:auto;
+}

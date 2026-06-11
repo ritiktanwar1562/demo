@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Service</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <img src="images/logo.png" alt="Laundry services">
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+
+        <h3>Ricky</h3>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="left">
+            <h1>Revitalize Your Clothes With Expert Laundry Services</h1>
+
+            <p>
+                We provide washing, ironing and dry cleaning services
+                at affordable prices.
+            </p>
+
+            <button onclick="scrollBooking()">
+                Book a Service Today
+            </button>
+        </div>
+
+        <div class="right">
+            <img src="images/hero.jpg" alt="laundry services">
+        </div>
+
+    </section>
+
+    <!-- Service Overview -->
+    <section class="overview">
+
+        <div>
+            <h2>15+</h2>
+            <p>Laundry Services</p>
+        </div>
+
+        <div>
+            <h2>240+</h2>
+            <p>Happy Customers</p>
+        </div>
+
+        <div>
+            <h2>2+</h2>
+            <p>Years Experience</p>
+        </div>
+
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+
+        <div class="services">
+
+            <h2>Our Services</h2>
+
+            <div>
+                Dry Cleaning ₹200
+                <button onclick="addItem('Dry Cleaning',200)">
+                    Add Item
+                </button>
+            </div>
+
+            <div>
+                Wash & Fold ₹100
+                <button onclick="addItem('Wash & Fold',100)">
+                    Add Item
+                </button>
+            </div>
+
+            <div>
+                Ironing ₹50
+                <button onclick="addItem('Ironing',50)">
+                    Add Item
+                </button>
+            </div>
+
+            <div>
+                Steam Press ₹150
+                <button onclick="addItem('Steam Press',150)">
+                    Add Item
+                </button>
+            </div>
+
+        </div>
+
+        <div class="cart">
+
+            <h2>Added Services</h2>
+
+            <ul id="list"></ul>
+
+            <h3>Total Amount ₹<span id="total">0</span></h3>
+
+            <input type="text" id="name" placeholder="Full Name">
+
+            <input type="email" id="email" placeholder="Email">
+
+            <input type="text" id="phone" placeholder="Phone Number">
+
+            <button onclick="bookNow()">
+                Book Now
+            </button>
+
+            <p id="message"></p>
+
+        </div>
+
+    </section>
+
+    <!-- Quality Section -->
+    <section class="quality">
+
+        <div class="card">
+            <h3>Premium Services</h3>
+            <img src="images/premium.png" alt="Premium">
+            <p>Best laundry quality.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/support.png" alt="Support">
+            <h3>Quick Support</h3>
+            <p>Fast customer help.</p>
+        </div>
+
+        <div class="card">
+        <img src="images/delivery.png" alt="Delivery">
+            <h3>Hassle Free Delivery</h3>
+            <p>On time delivery.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/price.png" alt="Price">
+            <h3>Affordable Prices</h3>
+            <p>Budget friendly rates.</p>
+        </div>
+
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+
+        <h2>Subscribe to our Newsletter</h2>
+
+        <input type="text" placeholder="Full Name">
+
+        <input type="email" placeholder="Email">
+
+        <button>Subscribe</button>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <div>
+            <img="images/logo.png" alt="Laundry services">
+        </div>
+
+        <div>
+            <h3>Important Links</h3>
+            <p>About Us</p>
+            <p>Contact Us</p>
+            <p>Privacy Policy</p>
+        </div>
+        </footer>
+        <script src="script.js"></script>
+        </body>
+        </html>
