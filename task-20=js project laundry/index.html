@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laundry Service</title>
+    <title>Ricky Laundry Service</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -14,100 +14,171 @@
 </head>
 <body>
 
-    <nav>
-        <div class="logo-area">
-            <img src="images/logo.png" alt="Laundry Services Logo">
-            <h3>Ricky Laundry</h3>
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="images/logo.png" alt="Logo" class="nav-logo">
+            <span class="brand-name">Ricky Laundry</span>
         </div>
-        <ul>
+        <ul class="nav-links">
             <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#booking">Booking</a></li>
+            <li><a href="#contact">Contact Us</a></li>
         </ul>
+        <div class="nav-right">
+            <span class="user-display">👤 Ritik Tanwar</span>
+        </div>
     </nav>
 
-    <section id="home" class="hero-section">
-        <div class="hero-content">
+    <section id="home" class="hero">
+        <div class="hero-text">
             <h1>Fresh, Clean Clothes <br>Delivered To Your Doorstep</h1>
             <p>Experience the finest professional laundry and dry cleaning service in the city.</p>
-            <a href="#services" class="cta-btn">Explore Services</a>
+            <a href="#booking" class="btn-main">Book Now</a>
         </div>
-        <div class="hero-image">
-            <img src="images/hero.jpg" alt="Laundry Main Banner Image">
-        </div>
-    </section>
-
-    <section class="stats-section">
-        <div class="stats-container">
-            <div class="stat-box">
-                <h2>15+</h2>
-                <p>Services</p>
-            </div>
-            <div class="stat-box">
-                <h2>2+ Years</h2>
-                <p>Of Experience</p>
-            </div>
-            <div class="stat-box">
-                <h2>240+</h2>
-                <p>Happy Customers</p>
-            </div>
+        <div class="hero-img-box">
+            <img src="images/hero.jpg" alt="Laundry Banner">
         </div>
     </section>
 
-    <section id="services">
+    <section class="counters">
+        <div class="counter-item">
+            <h2>15+</h2>
+            <p>Services</p>
+        </div>
+        <div class="counter-item">
+            <h2>2+ Years</h2>
+            <p>Of Experience</p>
+        </div>
+        <div class="counter-item">
+            <h2>240+</h2>
+            <p>Happy Customers</p>
+        </div>
+    </section>
+
+    <section id="about" class="quality-section">
+        <div class="section-heading">
+            <h2>Why Choose Us?</h2>
+            <p>Our commitment to quality and absolute customer satisfaction</p>
+        </div>
+        <div class="quality-grid">
+            <div class="quality-card">
+                <h3>Premium Services</h3>
+                <p>We use top-grade detergents and modern equipment to handle your clothes with supreme care.</p>
+            </div>
+            <div class="quality-card">
+                <h3>Quick Support</h3>
+                <p>Our customer service team is available round the clock to solve your queries instantly.</p>
+            </div>
+            <div class="quality-card">
+                <h3>Timely Delivery</h3>
+                <p>Get your fresh, ironed, and cleaned garments packed neatly and delivered right on time.</p>
+            </div>
+            <div class="quality-card">
+                <h3>Affordable Prices</h3>
+                <p>High-quality professional laundry treatments at competitive prices that fit your budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
         <h2>Our Premium Services</h2>
-        <p>Select the services you need below:</p>
-        <div class="services-container">
-            <div class="service-card">
-                <img src="images/premium.png" alt="Dry Cleaning Icon">
-                <button onclick="addItem('Dry Cleaning', 200)">Add Dry Cleaning (₹200)</button>
+        <p>Select the laundry treatments you need below:</p>
+        <div class="services-grid">
+            <div class="card">
+                <img src="images/premium.png" alt="Dry Cleaning">
+                <button onclick="addService('Dry Cleaning', 200)">Add Dry Cleaning (₹200)</button>
             </div>
-            <div class="service-card">
-                <img src="images/price.png" alt="Wash & Fold Icon">
-                <button onclick="addItem('Wash & Fold', 100)">Add Wash & Fold (₹100)</button>
+            <div class="card">
+                <img src="images/price.png" alt="Wash & Fold">
+                <button onclick="addService('Wash & Fold', 100)">Add Wash & Fold (₹100)</button>
             </div>
-            <div class="service-card">
-                <img src="images/support.png" alt="Ironing Icon">
-                <button onclick="addItem('Ironing', 50)">Add Ironing (₹50)</button>
+            <div class="card">
+                <img src="images/support.png" alt="Ironing">
+                <button onclick="addService('Ironing', 50)">Add Ironing (₹50)</button>
             </div>
         </div>
     </section>
+    <section id="booking" class="booking-section">
+        <div class="booking-box">
+            
+            <div class="booking-left-list">
+                <h2>Selected Items</h2>
+                <ul id="cartList"></ul>
+                <div class="total-box">
+                    <h3>Total Bill: ₹<span id="billAmount">0</span></h3>
+                </div>
+                <div class="delivery-graphic">
+                    <img src="images/delivery.png" alt="Delivery Van">
+                </div>
+            </div>
 
-    <section id="booking" class="booking-container">
-        <div class="booking-flex">
-            <div class="booking-form-side">
-                <h2>Added Services</h2>
-                <ul id="List"></ul>
-                <h3>Total Amount: ₹<span id="total">0</span></h3>
-
-                <form id="bookingForm">
-                    <input type="text" id="name" placeholder="Enter your name" required>
-                    <input type="email" id="email" placeholder="Enter your email" required>
-                    <input type="text" id="phone" placeholder="Enter your phone number" required>
-                    <button type="submit" id="bookNowBtn">Book Now</button>
+            <div class="booking-right-form">
+                <h2>Complete Your Booking</h2>
+                <form id="laundryForm">
+                    <div class="input-group">
+                        <label>Your Name</label>
+                        <input type="text" id="custName" placeholder="Enter full name" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" id="custEmail" placeholder="Enter email" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Phone Number</label>
+                        <input type="text" id="custPhone" placeholder="Enter mobile number" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Confirm Order</button>
                 </form>
-                <p id="message"></p>
+                <p id="statusMsg"></p>
             </div>
-            <div class="booking-image-side">
-                <img src="images/delivery.png" alt="Delivery Logistics Image">
-            </div>
+
         </div>
     </section>
 
-    <section class="newsletter-section">
-        <h3>Subscribe to our Newspaper & Newsletter</h3>
-        <p>Get weekly updates on laundry tips and exclusive discount coupons!</p>
-        <div class="newsletter-form">
-            <input type="email" id="subscribeEmail" placeholder="Enter your email address">
-            <button type="button" id="subscribeBtn">Subscribe</button>
+    <section class="newsletter">
+        <h3>Subscribe to our Newsletter</h3>
+        <p>Get regular laundry care tips and exclusive seasonal discount coupons.</p>
+        <div class="news-form">
+            <input type="email" id="newsEmail" placeholder="Enter your email path">
+            <button type="button" id="newsBtn">Subscribe</button>
         </div>
-        <p id="subscribeMsg"></p>
+        <p id="newsMsg"></p>
     </section>
-    <footer>
-        <img src="images/logo.png" alt="Logo" id="footer-logo">
-        <h3>Subscribe to our Newspaper & Newsletter</h3>
-        <p>&copy; 2026 Ricky Laundry Services. All Rights Reserved.</p>
+
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <img src="images/logo.png" alt="Logo" class="footer-logo">
+                <p>&copy; 2026 Ricky Laundry. All Rights Reserved.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Important Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>Email: support@rickylaundry.com</p>
+                <p>Phone: +91 9876543210</p>
+                <p>Address: Main Street, New Delhi, India</p>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#">Facebook</a> | 
+                    <a href="#">Instagram</a> | 
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="script.js"></script></body>
+    <script src="script.js"></script>
+</body>
 </html>
