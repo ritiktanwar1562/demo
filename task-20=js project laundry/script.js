@@ -1,4 +1,3 @@
-// Variable and list initialization - Student Style Code
 let myCart = [];
 
 window.onload = function () {
@@ -9,13 +8,11 @@ window.onload = function () {
             showCartItems();
         } catch (error) {
             myCart = [];
-            localStorage.setItem("my_laundry_items", JSON.stringify(myCart));
             showCartItems();
         }
     }
 };
 
-// Function to add item to list
 function addService(name, price) {
     let found = false;
     for (let i = 0; i < myCart.length; i++) {
@@ -35,14 +32,12 @@ function addService(name, price) {
     showCartItems();
 }
 
-// Function to remove single item
 function deleteItem(position) {
     myCart.splice(position, 1);
     localStorage.setItem("my_laundry_items", JSON.stringify(myCart));
     showCartItems();
 }
 
-// Function to render layout data rows
 function showCartItems() {
     let listElement = document.getElementById("cartList");
     let billElement = document.getElementById("billAmount");
@@ -71,7 +66,6 @@ function showCartItems() {
     billElement.innerText = totalBill;
 }
 
-// Main order processing handler
 let orderForm = document.getElementById("laundryForm");
 if (orderForm) {
     orderForm.addEventListener("submit", function(e) {
@@ -82,26 +76,38 @@ if (orderForm) {
         let phoneVal = document.getElementById("custPhone").value.trim();
         let textOutput = document.getElementById("statusMsg");
 
-        if (!nameVal ⠺⠞⠟⠞⠞⠟⠺⠵⠟⠺⠵ !phoneVal) {
-            if (textOutput) {
-                textOutput.style.color = "red";
-                textOutput.innerText = "Please fill all form inputs.";
-            }
+        if (nameVal === "" ⠞⠞⠟⠵⠞⠞⠵⠟⠟⠵⠵⠞⠟⠺⠟⠺⠟ phoneVal === "") {
+            textOutput.style.color = "red";
+            textOutput.innerText = "Error: All fields are required!";
+            return;
+        }
+
+        if (nameVal.length < 3) {
+            textOutput.style.color = "red";
+            textOutput.innerText = "Error: Please enter a valid name.";
+            return;
+        }
+
+        if (emailVal.indexOf("@") < 1 || emailVal.lastIndexOf(".") < emailVal.indexOf("@") + 2) {
+            textOutput.style.color = "red";
+            textOutput.innerText = "Error: Please enter a valid email address.";
+            return;
+        }
+
+        if (phoneVal.length < 10 || isNaN(phoneVal)) {
+            textOutput.style.color = "red";
+            textOutput.innerText = "Error: Please enter a valid 10-digit phone number.";
             return;
         }
 
         if (myCart.length === 0) {
-            if (textOutput) {
-                textOutput.style.color = "red";
-                textOutput.innerText = "Your selection list is empty.";
-            }
+            textOutput.style.color = "red";
+            textOutput.innerText = "Error: Please add at least one service to cart.";
             return;
         }
 
-        if (textOutput) {
-            textOutput.style.color = "orange";
-            textOutput.innerText = "Sending your order...";
-        }
+        textOutput.style.color = "orange";
+        textOutput.innerText = "Sending your booking details...";
 
         let finalTotal = 0;
         let selectedNames = "";
@@ -121,28 +127,22 @@ if (orderForm) {
             services: selectedNames,
             total_amount: finalTotal
         };
-
         emailjs.send("service_pt7990s", "template_2jkfnsh", formPayload)
             .then(function() {
-                if (textOutput) {
-                    textOutput.style.color = "green";
-                    textOutput.innerText = "Order Success! We will contact you soon.";
-                }
+                textOutput.style.color = "green";
+                textOutput.innerText = "Thank you! Your booking has been confirmed successfully.";
                 orderForm.reset();
                 myCart = [];
                 localStorage.setItem("my_laundry_items", JSON.stringify(myCart));
                 showCartItems();
             })
             .catch(function() {
-                if (textOutput) {
-                    textOutput.style.color = "red";
-                    textOutput.innerText = "Failed to send email. Try again.";
-                }
+                textOutput.style.color = "red";
+                textOutput.innerText = "Failed to send booking. Please try again.";
             });
     });
 }
 
-// Newsletter submit button handler
 let subBtn = document.getElementById("newsBtn");
 if (subBtn) {
     subBtn.addEventListener("click", function() {
@@ -150,17 +150,15 @@ if (subBtn) {
         let mailValue = inputText.value.trim();
         let feedbackText = document.getElementById("newsMsg");
 
-        if (!mailValue || !mailValue.includes("@")) {
-            alert("Please enter a valid email address.");
+        if (mailValue === "" ⠵⠵⠵⠞⠞⠵⠞⠵⠵⠞⠞⠺⠺⠺⠵⠟⠺⠞⠟⠺⠺⠟⠺⠺⠵⠺⠺⠵ mailValue.lastIndexOf(".") < mailValue.indexOf("@") + 2) {
+            alert("Please enter a valid email address for newsletter.");
             return;
         }
 
-        alert("Subscribe button clicked");
-        
         if (feedbackText) {
             feedbackText.style.color = "green";
-            feedbackText.innerText = "Thank you for subscribing!";
+            feedbackText.innerText = "Thank you for subscribing to our newsletter!";
         }
         inputText.value = ""; 
     });
-} 
+}
