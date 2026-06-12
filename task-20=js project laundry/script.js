@@ -1,155 +1,166 @@
-let cart = [];
+// Variable and list initialization - Student Style Code
+let myCart = [];
 
 window.onload = function () {
-    const savedCart = localStorage.getItem("laundry_cart_items");
-    if (savedCart) {
+    let savedData = localStorage.getItem("my_laundry_items");
+    if (savedData) {
         try {
-            cart = JSON.parse(savedCart);
-            synchronizeDOMInterface();
-        } catch (e) {
-            cart = [];
-            localStorage.setItem("laundry_cart_items", JSON.stringify(cart));
-            synchronizeDOMInterface();
+            myCart = JSON.parse(savedData);
+            showCartItems();
+        } catch (error) {
+            myCart = [];
+            localStorage.setItem("my_laundry_items", JSON.stringify(myCart));
+            showCartItems();
         }
     }
 };
 
-function addItem(serviceName, price) {
-    const existingItem = cart.find(item => item.name === serviceName);
-    if (existingItem) {
-        alert(`${serviceName} is already added.`);
+// Function to add item to list
+function addService(name, price) {
+    let found = false;
+    for (let i = 0; i < myCart.length; i++) {
+        if (myCart[i].itemName === name) {
+            found = true;
+            break;
+        }
+    }
+
+    if (found) {
+        alert(name + " is already in your selected list.");
         return;
     }
-    cart.push({ name: serviceName, price: price });
-    localStorage.setItem("laundry_cart_items", JSON.stringify(cart));
-    synchronizeDOMInterface();
+
+    myCart.push({ itemName: name, itemPrice: price });
+    localStorage.setItem("my_laundry_items", JSON.stringify(myCart));
+    showCartItems();
 }
 
-function removeItem(index) {
-    cart.splice(index, 1);
-    localStorage.setItem("laundry_cart_items", JSON.stringify(cart));
-    synchronizeDOMInterface();
+// Function to remove single item
+function deleteItem(position) {
+    myCart.splice(position, 1);
+    localStorage.setItem("my_laundry_items", JSON.stringify(myCart));
+    showCartItems();
 }
 
-function synchronizeDOMInterface() {
-    const listContainer = document.getElementById("List");
-    const totalDisplay = document.getElementById("total");
+// Function to render layout data rows
+function showCartItems() {
+    let listElement = document.getElementById("cartList");
+    let billElement = document.getElementById("billAmount");
     
-    listContainer.innerHTML = ""; 
-    let dynamicTotal = 0;
+    if (!listElement || !billElement) return;
 
-    cart.forEach((item, index) => {
-        dynamicTotal += item.price;
-        const itemNode = document.createElement("li");
-        itemNode.style.display = "flex";
-        itemNode.style.justifyContent = "space-between";
-        itemNode.style.margin = "8px 0";
-        itemNode.style.padding = "6px";
-        
-        itemNode.innerHTML = `<span>${item.name} - ₹${item.price}</span>`;
+    listElement.innerHTML = ""; 
+    let totalBill = 0;
 
-        const removeControl = document.createElement("button");
-        removeControl.innerText = "Remove";
-        removeControl.style.color = "red";
-        removeControl.style.border = "none";
-        removeControl.style.background = "none";
-        removeControl.style.cursor = "pointer";
-        removeControl.style.fontWeight = "bold";
+    for (let i = 0; i < myCart.length; i++) {
+        totalBill += myCart[i].itemPrice;
         
-        removeControl.onclick = function() {
-            removeItem(index);
+        let itemRow = document.createElement("li");
+        itemRow.innerHTML = "<span>" + myCart[i].itemName + " - ₹" + myCart[i].itemPrice + "</span>";
+
+        let delBtn = document.createElement("button");
+        delBtn.innerText = "Remove";
+        delBtn.onclick = function() {
+            deleteItem(i);
         };
 
-        itemNode.appendChild(removeControl);
-        listContainer.appendChild(itemNode);
-    });
+        itemRow.appendChild(delBtn);
+        listElement.appendChild(itemRow);
+    }
 
-    totalDisplay.innerText = dynamicTotal;
+    billElement.innerText = totalBill;
 }
 
-const clientBookingForm = document.getElementById("bookingForm");
-if (clientBookingForm) {
-    clientBookingForm.addEventListener("submit", function(event) {
-        event.preventDefault(); 
+// Main order processing handler
+let orderForm = document.getElementById("laundryForm");
+if (orderForm) {
+    orderForm.addEventListener("submit", function(e) {
+        e.preventDefault(); 
 
-        const clientName = document.getElementById("name").value.trim();
-        const clientEmail = document.getElementById("email").value.trim();
-        const clientPhone = document.getElementById("phone").value.trim();
-        const feedbackOutput = document.getElementById("message");
+        let nameVal = document.getElementById("custName").value.trim();
+        let emailVal = document.getElementById("custEmail").value.trim();
+        let phoneVal = document.getElementById("custPhone").value.trim();
+        let textOutput = document.getElementById("statusMsg");
 
-        if (!clientName || !clientEmail || !clientPhone) {
-            if (feedbackOutput) {
-                feedbackOutput.style.color = "red";
-                feedbackOutput.innerText = "Error: All data fields are mandatory.";
+        if (!nameVal ⠺⠞⠟⠞⠞⠟⠺⠵⠟⠺⠵ !phoneVal) {
+            if (textOutput) {
+                textOutput.style.color = "red";
+                textOutput.innerText = "Please fill all form inputs.";
             }
             return;
         }
 
-        if (cart.length === 0) {
-            if (feedbackOutput) {
-                feedbackOutput.style.color = "red";
-                feedbackOutput.innerText = "Validation Failed: Empty cart.";
+        if (myCart.length === 0) {
+            if (textOutput) {
+                textOutput.style.color = "red";
+                textOutput.innerText = "Your selection list is empty.";
             }
             return;
         }
 
-        if (feedbackOutput) {
-            feedbackOutput.style.color = "blue";
-            feedbackOutput.innerText = "Transmitting booking request...";
+        if (textOutput) {
+            textOutput.style.color = "orange";
+            textOutput.innerText = "Sending your order...";
         }
 
-        let currentTotal = 0;
-        const serviceNames = cart.map(item => {
-            currentTotal += item.price;
-            return item.name;
-        }).join(", ");
+        let finalTotal = 0;
+        let selectedNames = "";
+        
+        for (let j = 0; j < myCart.length; j++) {
+            finalTotal += myCart[j].itemPrice;
+            selectedNames += myCart[j].itemName;
+            if (j < myCart.length - 1) {
+                selectedNames += ", ";
+            }
+        }
 
-        const dataPayload = {
-            name: clientName,
-            email: clientEmail,
-            phone: clientPhone,
-            services: serviceNames,
-            total_amount: currentTotal
+        let formPayload = {
+            name: nameVal,
+            email: emailVal,
+            phone: phoneVal,
+            services: selectedNames,
+            total_amount: finalTotal
         };
 
-        emailjs.send("service_pt7990s", "template_zjkfnsh", dataPayload)
+        emailjs.send("service_pt7990s", "template_2jkfnsh", formPayload)
             .then(function() {
-                if (feedbackOutput) {
-                    feedbackOutput.style.color = "green";
-                    feedbackOutput.innerText = "Booking Confirmed! Check inbox for notification.";
+                if (textOutput) {
+                    textOutput.style.color = "green";
+                    textOutput.innerText = "Order Success! We will contact you soon.";
                 }
-                clientBookingForm.reset();
-                cart = [];
-                localStorage.setItem("laundry_cart_items", JSON.stringify(cart));
-                synchronizeDOMInterface();
+                orderForm.reset();
+                myCart = [];
+                localStorage.setItem("my_laundry_items", JSON.stringify(myCart));
+                showCartItems();
             })
             .catch(function() {
-                if (feedbackOutput) {
-                    feedbackOutput.style.color = "red";
-                    feedbackOutput.innerText = "Transmission failed. Check configuration.";
+                if (textOutput) {
+                    textOutput.style.color = "red";
+                    textOutput.innerText = "Failed to send email. Try again.";
                 }
             });
     });
 }
 
-const newspaperSubscribeBtn = document.getElementById("subscribeBtn");
-if (newspaperSubscribeBtn) {
-    newspaperSubscribeBtn.addEventListener("click", function() {
-        const inputField = document.getElementById("subscribeEmail");
-        const stringValue = inputField.value.trim();
-        const feedbackContainer = document.getElementById("subscribeMsg");
+// Newsletter submit button handler
+let subBtn = document.getElementById("newsBtn");
+if (subBtn) {
+    subBtn.addEventListener("click", function() {
+        let inputText = document.getElementById("newsEmail");
+        let mailValue = inputText.value.trim();
+        let feedbackText = document.getElementById("newsMsg");
 
-        if (!stringValue || !stringValue.includes("@")) {
-            alert("Error: Structural email syntax incorrect.");
+        if (!mailValue || !mailValue.includes("@")) {
+            alert("Please enter a valid email address.");
             return;
         }
 
         alert("Subscribe button clicked");
         
-        if (feedbackContainer) {
-            feedbackContainer.style.color = "green";
-            feedbackContainer.innerText = "Subscription verification successful. Thank you!";
+        if (feedbackText) {
+            feedbackText.style.color = "green";
+            feedbackText.innerText = "Thank you for subscribing!";
         }
-        inputField.value = ""; 
+        inputText.value = ""; 
     });
-}
+} 
