@@ -1,5 +1,5 @@
 let myCart = [];
-
+emailjs.init("uKrXONhnQdk--935f");
 window.onload = function () {
     let savedData = localStorage.getItem("my_laundry_items");
     if (savedData) {
@@ -76,7 +76,7 @@ if (orderForm) {
         let phoneVal = document.getElementById("custPhone").value.trim();
         let textOutput = document.getElementById("statusMsg");
 
-        if (nameVal === "" ⠞⠞⠟⠵⠞⠞⠵⠟⠟⠵⠵⠞⠟⠺⠟⠺⠟ phoneVal === "") {
+        if (nameVal === "" || emailVal === "" || phoneVal === "") {
             textOutput.style.color = "red";
             textOutput.innerText = "Error: All fields are required!";
             return;
@@ -136,9 +136,10 @@ if (orderForm) {
                 localStorage.setItem("my_laundry_items", JSON.stringify(myCart));
                 showCartItems();
             })
-            .catch(function() {
+            .catch(function(error) {
+                console.log("ERROR:", error);
                 textOutput.style.color = "red";
-                textOutput.innerText = "Failed to send booking. Please try again.";
+                textOutput.innerText = "Failed to send booking. Please try again: " + error.text;
             });
     });
 }
@@ -150,11 +151,14 @@ if (subBtn) {
         let mailValue = inputText.value.trim();
         let feedbackText = document.getElementById("newsMsg");
 
-        if (mailValue === "" ⠵⠵⠵⠞⠞⠵⠞⠵⠵⠞⠞⠺⠺⠺⠵⠟⠺⠞⠟⠺⠺⠟⠺⠺⠵⠺⠺⠵ mailValue.lastIndexOf(".") < mailValue.indexOf("@") + 2) {
-            alert("Please enter a valid email address for newsletter.");
-            return;
-        }
-
+        if(mailValue === "" ||
+            mailValue.indexOf("@") < 1 ||
+            mailValue.lastIndexOf(".") <
+            mailValue.indexOf("@") + 2) {
+                alert("please enter a valid email address for newsletter.");
+                return;
+            }
+                                       
         if (feedbackText) {
             feedbackText.style.color = "green";
             feedbackText.innerText = "Thank you for subscribing to our newsletter!";
