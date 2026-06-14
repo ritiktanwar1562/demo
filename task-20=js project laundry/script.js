@@ -1,3 +1,4 @@
+// Load saved cart data from localstorage
 let myCart = [];
 emailjs.init("uKrXONhnQdk--935f");
 window.onload = function () {
@@ -12,7 +13,7 @@ window.onload = function () {
         }
     }
 };
-
+// Add selected laundry servuces to cart
 function addService(name, price) {
     let found = false;
     for (let i = 0; i < myCart.length; i++) {
@@ -37,7 +38,7 @@ function deleteItem(position) {
     localStorage.setItem("my_laundry_items", JSON.stringify(myCart));
     showCartItems();
 }
-
+// Display cart items and calculate total bill
 function showCartItems() {
     let listElement = document.getElementById("cartList");
     let billElement = document.getElementById("billAmount");
@@ -65,7 +66,7 @@ function showCartItems() {
 
     billElement.innerText = totalBill;
 }
-
+// Validate booking form and send confirmation email
 let orderForm = document.getElementById("laundryForm");
 if (orderForm) {
     orderForm.addEventListener("submit", function(e) {
@@ -127,6 +128,7 @@ if (orderForm) {
             services: selectedNames,
             total_amount: finalTotal
         };
+        // Send booking details through EmailJS 
         emailjs.send("service_pt7990s", "template_2jkfnsh", formPayload)
             .then(function() {
                 textOutput.style.color = "green";
