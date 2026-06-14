@@ -1,4 +1,4 @@
-/* Reset basic stylings */
+/* Ricky Laundry Website Styling */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Navbar container layout */
+/* Navbar bar */
 .navbar {
     background-color: #007bff;
     color: white;
@@ -66,7 +66,7 @@ body {
     font-weight: bold;
 }
 
-/* Hero container styling */
+/*Home section design */
 .hero {
     display: flex;
     align-items: center;
@@ -118,7 +118,7 @@ body {
     border-radius: 8px;
 }
 
-/* Horizontal counter configurations */
+/* counter section */
 .counters {
     background-color: #007bff;
     color: white;
@@ -138,7 +138,7 @@ body {
     opacity: 0.9;
 }
 
-/* Quality descriptions wrapper styles */
+/* Quality section */
 .quality-section {
     padding: 60px 10%;
     background-color: white;
@@ -187,7 +187,7 @@ body {
     line-height: 1.4;
 }
 
-/* Catalog configurations */
+/* Services section */
 .services-section {
     text-align: center;
     padding: 60px 5%;
@@ -241,7 +241,7 @@ body {
     background-color: #0056b3;
 }
 
-/* Booking Layout Wrapper (Fixed: List on Left, Form on Right) */
+/* Booking section */
 .booking-container {
     padding: 40px 5%;
 }
@@ -314,7 +314,7 @@ body {
     height: auto;
 }
 
-/* Form structures */
+/* Input fields */
 .input-group {
     margin-bottom: 15px;
     display: flex;
@@ -358,7 +358,7 @@ body {
     text-align: center;
 }
 
-/* Newsletter bar custom settings */
+/* Newsletter section */
 .newsletter {
     text-align: center;
     padding: 40px 5%;
@@ -394,7 +394,7 @@ body {
     font-weight: 500;
 }
 
-/* Structured footer columns */
+/* Footer section */
 .footer {
     background-color: #212529;
     color: #ccc;
@@ -452,7 +452,7 @@ body {
     text-decoration: underline;
 }
 
-/* Layout adaptive controls */
+/* Responsive design */
 @media (max-width: 768px) {
     .hero, .booking-box, .footer-container {
         flex-direction: column;
