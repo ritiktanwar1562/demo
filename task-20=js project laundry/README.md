@@ -1,19 +1,19 @@
 # Laundry Service Website
 
-## Project Overview
+## About Project
 
-This is a Laundry Service Website developed using HTML, CSS, and JavaScript. The website allows users to view laundry services, add services to a cart, remove services from the cart, book laundry services, and subscribe to newsletters.
+This is a Laundry Service Website made using HTML, CSS and JavaScript. In this project, users can view laundry services, add services to a cart, remove services from the cart, place a booking request and subscribe to the newsletter.
 
 ## Features
 
-- Responsive design for mobile, tablet, and desktop devices
+- View available laundry services
 - Add services to cart
 - Remove services from cart
-- Cart data stored using Local Storage
-- Service booking form
-- Email confirmation using EmailJS
-- Newsletter subscription functionality
-- Attractive user interface with images and logo
+- Booking form with validation
+- Newsletter subscription
+- Responsive design
+- Local Storage support
+- EmailJS integration
 
 ## Technologies Used
 
@@ -21,22 +21,19 @@ This is a Laundry Service Website developed using HTML, CSS, and JavaScript. The
 - CSS
 - JavaScript
 - EmailJS
-- Local Storage
 
 ## What I Learned
 
-Through this project, I learned:
+While working on this project, I learned:
 
-- Creating webpage structures using HTML
+- Creating webpage layouts using HTML
 - Styling webpages with CSS
-- Making websites responsive using Media Queries
-- Using JavaScript for interactivity
-- Handling button click events
-- DOM Manipulation
-- Form Validation
-- Local Storage implementation
-- Email integration using EmailJS
-- Debugging and fixing website issues
+- Using JavaScript for website interactivity
+- Working with DOM manipulation
+- Form validation techniques
+- Using Local Storage to save data
+- Connecting EmailJS for sending emails
+- Making websites responsive for different screen sizes
 
 ## How to Run
 
@@ -46,15 +43,14 @@ Through this project, I learned:
 4. Run the project using Live Server.
 5. The website will open in your browser.
 
-## EmailJS Setup
+## Challenges Faced
 
-1. Create an EmailJS account.
-2. Create an Email Service.
-3. Create an Email Template.
-4. Copy the Service ID, Template ID, and Public Key.
-5. Update these values in the JavaScript file.
-6. Save the file and run the project.
+- Managing cart items with JavaScript
+- Saving and retrieving data from Local Storage
+- Making the website responsive
+- Handling form validation
+- Fixing errors during testing
 
 ## Project Outcome
 
-This project helped me improve my frontend web development skills. I learned how to build a responsive website, manage user interactions, store data using Local Storage, validate forms, and integrate EmailJS for sending emails. It also improved my problem-solving and debugging skills.
+This project helped me improve my frontend web development skills. I got hands-on practice with HTML, CSS and JavaScript while building a complete website from scratch. It also helped me understand Local Storage, form handling and EmailJS integration better.
