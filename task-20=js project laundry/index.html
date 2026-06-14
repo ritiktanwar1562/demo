@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- LaundrynBooking Website Project -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +9,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
        (function(){
-          emailjs.init("9q2jLoTgTVBV2aamA"); 
+          emailjs.init("uKrXONhnQdk--935f"); 
        })();
     </script>
 </head>
@@ -81,40 +82,45 @@
             </div>
         </div>
     </section>
-
-    <section id="services" class="services-section">
-        <h2>Our Premium Services</h2>
-        <p>Select the laundry treatments you need below:</p>
-        <div class="services-grid">
-            <div class="card">
-                <img src="images/premium.png" alt="Dry Cleaning">
-                <button onclick="addService('Dry Cleaning', 200)">Add Dry Cleaning (₹200)</button>
-            </div>
-            <div class="card">
-                <img src="images/price.png" alt="Wash & Fold">
-                <button onclick="addService('Wash & Fold', 100)">Add Wash & Fold (₹100)</button>
-            </div>
-            <div class="card">
-                <img src="images/support.png" alt="Ironing">
-                <button onclick="addService('Ironing', 50)">Add Ironing (₹50)</button>
-            </div>
-        </div>
-    </section>
     <section id="booking" class="booking-section">
         <div class="booking-box">
-            
-            <div class="booking-left-list">
-                <h2>Selected Items</h2>
-                <ul id="cartList"></ul>
-                <div class="total-box">
-                    <h3>Total Bill: ₹<span id="billAmount">0</span></h3>
-                </div>
-                <div class="delivery-graphic">
-                    <img src="images/delivery.png" alt="Delivery Van">
-                </div>
-            </div>
+        <div class ="booking-left-list">
+            <h2>Our Pewmium services</h2>
+            <p> Select the laundry treatment you need below:</p>
 
-            <div class="booking-right-form">
+            <div class="services-grid">
+                
+                        <div class="card">
+                        <img src="images/premium.png" alt="Dry Cleaning">
+                            <button onclick="addService('Dry Cleaning', 200)">
+                                Add Dry Cleaning (₹200)
+                            </button>
+                
+                        <div class="card">
+                            <img src="images/price.png" alt="Wash & Fold">
+                            <button onclick="addService('Wash & Fold', 100)">
+                                Add Wash & Fold (₹100)
+                            </button>
+                        </div>
+                
+                        <div class="card">
+                            <img src="images/support.png" alt="Ironing">
+                            <button onclick="addService('Ironing', 50)">
+                                Add Ironing (₹50)
+                            </button>
+                        </div>
+                
+                    </div>
+                
+                </div>
+                <h3> Selected services</h3>
+                <ul id="cartlist"></ul>
+                <div class="total-box">
+                <h3>Total:&#8377;<span id="totalprice">0</span></h3>
+                </div>                
+
+            
+          <div class="booking-right-form">
                 <h2>Complete Your Booking</h2>
                 <form id="laundryForm">
                     <div class="input-group">
@@ -141,7 +147,7 @@
         <h3>Subscribe to our Newsletter</h3>
         <p>Get regular laundry care tips and exclusive seasonal discount coupons.</p>
         <div class="news-form">
-            <input type="email" id="newsEmail" placeholder="Enter your email path">
+            <input type="email" id="newsEmail" placeholder="Enter your email">
             <button type="button" id="newsBtn">Subscribe</button>
         </div>
         <p id="newsMsg"></p>
