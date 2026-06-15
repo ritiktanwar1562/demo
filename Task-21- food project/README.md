@@ -21,6 +21,12 @@ This is a responsive Healthy Food Landing Page made using HTML and CSS. The webs
 - CSS3
 - Font Awesome
 
+## Responsive Breakpoints
+
+- 1200px - Large screen layout
+- 834px - Tablet layout (2-column cards)
+- 390px - Mobile layout with hamburger menu
+
 ## What I Learned
 
 While making this project, I learned:
