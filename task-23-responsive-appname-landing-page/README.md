@@ -68,6 +68,14 @@ The landing page includes a responsive navigation bar, a hero section, a feature
 - How to organize a landing page into different sections.
 
 
+## Challenges Faced
+
+- I learned how to make the layout responsive using Tailwind CSS.
+- I faced some difficulty in arranging the sections for mobile devices.
+- I solved the problem by using Flexbox, Grid, and Tailwind breakpoints.
+- I also learned how to create a mobile navigation menu using JavaScript.
+
+
 
 ## Conclusion
 
