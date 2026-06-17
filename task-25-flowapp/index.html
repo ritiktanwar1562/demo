@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FlowApp</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    keyframes: {
+                        slideUp: {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(40px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            }
+                        },
+
+                        float: {
+                            '0%,100%': {
+                                transform: 'translateY(0px)'
+                            },
+                            '50%': {
+                                transform: 'translateY(-12px)'
+                            }
+                        },
+
+                        glow: {
+                            '0%,100%': {
+                                boxShadow: '0 0 10px #8b5cf6'
+                            },
+                            '50%': {
+                                boxShadow: '0 0 25px #8b5cf6'
+                            }
+                        }
+                    },
+
+                    animation: {
+                        'slide-up': 'slideUp 1s ease forwards',
+                        'float': 'float 4s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-slate-950 text-white">
+
+    <!-- Page Starts Here -->
+    <!-- Navbar Start -->
+
+<nav class="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-white font-bold">
+                F
+            </div>
+            <h1 class="text-2xl font-bold">FlowApp</h1>
+        </div>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex items-center space-x-8 text-gray-300">
+            <li><a href="#" class="hover:text-white duration-300">Features</a></li>
+            <li><a href="#" class="hover:text-white duration-300">Pricing</a></li>
+            <li><a href="#" class="hover:text-white duration-300">Reviews</a></li>
+        </ul>
+
+        <!-- Button -->
+        <div class="hidden md:block">
+            <a href="#"
+                class="bg-gradient-to-r from-purple-600 to-blue-500 px-5 py-2 rounded-full hover:scale-105 duration-300 animate-glow">
+                Get Started
+            </a>
+        </div>
+
+        <!-- Mobile Menu Icon -->
+        <button class="md:hidden text-3xl">
+            ☰
+        </button>
+
+    </div>
+</nav>
+
+<!-- Navbar End -->
+<!-- Hero Section Start -->
+
+<section class="relative min-h screen flex items-center pt-28 px-6 overflow-hidden ">
+    <div class="absolute top-20 left-10 w-40 h-40 bg-purple-600 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+
+<div class="absolute bottom-10 right-10 w-52 h-52 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+        <!-- Left Content -->
+        <div class="animate-slide-up">
+
+            <span class="bg-white/10 border border-purple-500 px-4 py-2 rounded-full text-sm">
+                🚀 AI Powered Platform
+            </span>
+
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight mt-6">
+                Build Products
+                <span class="bg-gradient-to-r from-purple-500 to-cyan-400 bg-clip-text text-transparent">
+                    Users Love
+                </span>
+            </h1>
+
+            <p class="text-gray-300 mt-6 text-lg">
+                FlowApp helps teams build better products with AI automation,
+                real-time collaboration and powerful analytics.
+            </p>
+
+            <div class="flex gap-4 mt-8">
+
+                <a href="#"
+                    class="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 hover:scale-105 duration-300 animate-glow">
+                    Start Free Trial
+                </a>
+
+                <a href="#"
+                    class="px-6 py-3 rounded-full border border-gray-500 hover:bg-white hover:text-black duration-300">
+                    Watch Demo
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Right Side Image Part 4 me banayenge -->
+        <div class="relative flex justify-center">
+
+            <div class="absolute w-80 h-80 bg-purple-600 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+        
+            <img src="images/dashboard.png"
+                 alt="Dashboard"
+                 class="relative w-full max-w-lg rounded-3xl shadow-2xl hover:scale-105 duration-500 animate-float">
+        
+            <div class="absolute top-6 right-0 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2 animate-float">
+                <p class="text-green-400 font-bold">+120%</p>
+                <p class="text-sm text-gray-300">Growth</p>
+            </div>
+        
+            <div class="absolute bottom-8 left-0 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2 animate-float">
+                <p class="font-bold">Task Completed</p>
+                <p class="text-sm text-gray-300">98%</p>
+            </div>
+        
+        </div>
+
+    </div>
+<!-- Scroll Indicator -->
+<div class="flex justify-center mt-10">
+    <div class="animate-bounce text-center">
+        <p class="text-gray-400 text-sm">Scroll Down</p>
+        <span class="text-2xl">↓</span>
+    </div>
+</div>
+</section>
+<!-- Features Section Start -->
+
+<section class="py-20 px-6 bg-slate-900">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="text-center mb-12">
+
+            <h2 class="text-4xl md:text-5xl font-bold">
+                Amazing
+                <span class="bg-gradient-to-r from-purple-500 to-cyan-400 bg-clip-text text-transparent">
+                    Features
+                </span>
+            </h2>
+
+            <p class="text-gray-400 mt-4">
+                Powerful features to help your team work faster and smarter.
+            </p>
+
+        </div>
+
+        <!-- Bento Grid Start -->
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <!-- Big Feature Card -->
+            <div class="md:col-span-2 bg-gradient-to-r from-purple-600 to-cyan-500 p-8 rounded-3xl shadow-2xl hover:scale-105 transition duration-300">
+        
+                <h3 class="text-3xl font-bold mb-4">
+                    AI-Powered Automation
+                </h3>
+        
+                <p class="text-gray-100">
+                    Automate your daily workflow with smart AI tools and save valuable time.
+                </p>
+        
+            </div>
+        
+            <!-- Small Card 1 -->
+            <div class="bg-slate-800 p-6 rounded-3xl border border-slate-700 hover:border-purple-500 hover:scale-105 transition duration-300">
+                <h4 class="text-xl font-bold">Lightning Fast</h4>
+                <p class="text-gray-400 mt-2">
+                    Super fast performance for every task.
+                </p>
+            </div>
+            <!-- Small Card 2 -->
+<div class="bg-slate-800 p-6 rounded-3xl border border-slate-700 hover:border-cyan-500 hover:scale-105 transition duration-300">
+    <h4 class="text-xl font-bold">Bank-Level Security</h4>
+    <p class="text-gray-400 mt-2">
+        Your data is protected with advanced security.
+    </p>
+</div>
+
+<!-- Small Card 3 -->
+<div class="bg-slate-800 p-6 rounded-3xl border border-slate-700 hover:border-purple-500 hover:scale-105 transition duration-300">
+    <h4 class="text-xl font-bold">Advanced Analytics</h4>
+    <p class="text-gray-400 mt-2">
+        Track reports and performance easily.
+    </p>
+</div>
+
+<!-- Small Card 4 -->
+<div class="bg-slate-800 p-6 rounded-3xl border border-slate-700 hover:border-cyan-500 hover:scale-105 transition duration-300">
+    <h4 class="text-xl font-bold">Real-time Sync</h4>
+    <p class="text-gray-400 mt-2">
+        Keep your data updated across devices.
+    </p>
+</div>
+
+<!-- Small Card 5 -->
+<div class="bg-slate-800 p-6 rounded-3xl border border-slate-700 hover:border-purple-500 hover:scale-105 transition duration-300">
+    <h4 class="text-xl font-bold">Team Collaboration</h4>
+    <p class="text-gray-400 mt-2">
+        Work together with your team in real time.
+    </p>
+</div>
+
+    </div>
+
+</section>
+
+<!-- Features Section End -->
+<!-- Testimonials Section Start -->
+<section class="py-20 px-6 bg-slate-950">
+    <div class="max-w-7xl mx-auto text-center">
+
+        <h2 class="text-4xl md:text-5xl font-bold">
+            What Our
+            <span class="bg-gradient-to-r from-purple-500 to-cyan-400 bg-clip-text text-transparent">
+                Users Say
+            </span>
+        </h2>
+    
+        <p class="text-gray-400 mt-4">
+            Trusted by thousands of teams around the world.
+        </p>
+    
+        <!-- Testimonial Cards -->
+        <div class="grid md:grid-cols-3 gap-8 mt-12">
+            <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-6 hover:scale-105 transition duration-300">
+                <p class="text-yellow-400 text-xl">★★★★★</p>
+                <p class="text-gray-300 mt-4">
+                    "FlowApp has completely changed the way our team works."
+                </p>
+                <img src="images/user1.jpg" class="w-16 h-16 rounded-full mx-auto mt-6">
+                <h4 class="font-bold mt-4">Rahul Sharma</h4>
+                <p class="text-gray-400 text-sm">Product Manager</p>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-6 hover:scale-105 transition duration-300 md:-mt-6">
+                <p class="text-yellow-400 text-xl">★★★★★</p>
+                <p class="text-gray-300 mt-4">
+                    "Amazing design and very easy to use. Highly recommended."
+                </p>
+                <img src="images/user2.jpg" class="w-16 h-16 rounded-full mx-auto mt-6">
+                <h4 class="font-bold mt-4">Priya Singh</h4>
+                <p class="text-gray-400 text-sm">UI Designer</p>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-6 hover:scale-105 transition duration-300">
+                <p class="text-yellow-400 text-xl">★★★★★</p>
+                <p class="text-gray-300 mt-4">
+                    "Our productivity increased after switching to FlowApp."
+                </p>
+                <img src="images/user3.jpg" class="w-16 h-16 rounded-full mx-auto mt-6">
+                <h4 class="font-bold mt-4">Aman Verma</h4>
+                <p class="text-gray-400 text-sm">Software Engineer</p>
+            </div>
+    
+        </div>
+    
+    </div>
+
+</section>
+<!-- Testimonials Section End -->
+<!-- CTA Section Start -->
+<section class="py-20 px-6 bg-gradient-to-r from-purple-700 to-cyan-600 text-center relative overflow-hidden">
+
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold">
+            Ready to transform your workflow?
+        </h2>
+
+        <p class="text-gray-200 mt-6">
+            Join thousands of teams using FlowApp to boost productivity.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#" class="px-8 py-3 bg-white text-purple-700 rounded-full font-bold hover:scale-105 transition">
+                Start Free Trial
+            </a>
+
+            <a href="#" class="px-8 py-3 border border-white rounded-full hover:bg-white hover:text-purple-700 transition">
+                Schedule Demo
+            </a>
+        </div>
+
+        <p class="text-sm text-gray-200 mt-6">
+            No credit card required • Cancel anytime
+        </p>
+    </div>
+
+</section>
+<!-- CTA Section End -->
+<!-- Footer Start -->
+<footer class="bg-slate-950 border-t border-slate-800 py-12 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+
+        <div>
+            <h3 class="text-2xl font-bold text-purple-400">FlowApp</h3>
+            <p class="text-gray-400 mt-3">
+                Smart workflow platform for modern teams.
+            </p>
+        </div>
+
+        <div>
+            <h4 class="font-bold mb-4">Product</h4>
+            <ul class="space-y-2 text-gray-400">
+                <li>Features</li>
+                <li>Pricing</li>
+                <li>Updates</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="font-bold mb-4">Company</h4>
+            <ul class="space-y-2 text-gray-400">
+                <li>About</li>
+                <li>Careers</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="font-bold mb-4">Legal</h4>
+            <ul class="space-y-2 text-gray-400">
+                <li>Privacy Policy</li>
+                <li>Terms of Service</li>
+                <li>Support</li>
+            </ul>
+
+            <div class="flex gap-4 mt-6 text-xl">
+                <span>🌐</span>
+                <span>🐦</span>
+                <span>💼</span>
+                <span>📷</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="border-t border-slate-800 mt-10 pt-6 text-center text-gray-500">
+        © 2026 FlowApp. All rights reserved.
+    </div>
+</footer>
+<!-- Footer End -->
+
+<!-- Hero Section End -->
+
+</body>
+</html>
